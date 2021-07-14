@@ -19,6 +19,10 @@ ul {
   padding: 0;
 }
 
+input {
+  padding: 0;
+}
+
 /* цвет фона белый FFFFFF */
 /* основной цвет серый 757575 */
 /* втооричный цвет текста  212121 */
@@ -44,6 +48,17 @@ ul {
 
 :focus {
   outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 /* .list {
@@ -105,6 +120,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
+  padding: 40px 39px 40px 41px;
+
   min-height: 581px;
   min-width: 528px;
 
@@ -125,6 +142,155 @@ body {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+  fill: var(--accent-blue-colour);
+}
+
+.close-btn-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+
+  margin-bottom: 10px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--accent-blue-colour);
+}
+
+.form-input:hover + .input-icon,
+.form-input:focus + .input-icon {
+  fill: var(--accent-blue-colour);
+}
+
+.form-input-text {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.input-wraper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-text {
+  width: 100%;
+  min-height: 120px;
+
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.input-check-text {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 1.71;
+  /* identical to box height, or 171% */
+
+  letter-spacing: 0.03em;
+
+  color: #757575;
+}
+
+.input-check-icon-box {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-check-icon {
+  fill: white;
+}
+.input-check:checked + .input-check-text .input-check-icon-box {
+  background-color: var(--accent-blue-colour);
+  border: none;
+}
+
+.check-link {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+
+  color: #2196f3;
+}
+
+.btn-submit {
+  display: block;
+  margin: 0 auto;
+  min-width: 200px;
+  height: 50px;
+  background-color: var(--accent-blue-colour);
+  color: var(--bg-colour);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background: #188ce8;
   cursor: pointer;
 }
 
@@ -640,6 +806,88 @@ body {
   background-color: var(--accent-blue-colour);
 }
 
+/* --------footer-form-------------- */
+.subscription-form {
+  width: 570px;
+  height: 86px;
+  margin-left: 93px;
+}
+
+.subscription-form-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  margin-bottom: 20px;
+}
+
+.subscription-form-input {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+
+  width: 358px;
+  height: 50px;
+  background: #2f303a;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.subscription-form-flex {
+  display: flex;
+  align-items: center;
+}
+
+.subscription-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 50px;
+
+  margin-left: 12px;
+
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+}
+
+.subscription-form-icon {
+  margin-left: 10px;
+  fill: #ffffff;
+}
+
+.subscription-submit-btn:hover,
+.subscription-submit-btn:focus {
+  background: #188ce8;
+
+  cursor: pointer;
+}
+
+.subscription-submit-btn-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+
+  /*  display: flex;
+  align-items: center;  для чего он добавляется */
+}
 /*------------------------------------------------------------ PORTFOLIO----------------------------------------------------------------- */
 
 /*------------------------------------------------------------ menu-nav----------------------------------------------------------------- */
